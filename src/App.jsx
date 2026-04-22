@@ -2657,20 +2657,20 @@ function StylePage() {
                     src={entry.photos[0]}
                     alt={entry.title}
                     loading="lazy"
-                    style={{ width: "100%", maxHeight: 520, objectFit: "cover", display: "block", borderRadius: 4 }}
+                    style={{ width: "100%", maxHeight: 640, objectFit: "contain", display: "block", borderRadius: 4, background: C.bgDeep }}
                   />
                   <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 4 }}>
                     <img
                       src={entry.photos[1]}
                       alt={entry.title}
                       loading="lazy"
-                      style={{ width: "100%", height: 300, objectFit: "cover", display: "block", borderRadius: 4 }}
+                      style={{ width: "100%", maxHeight: 400, objectFit: "contain", display: "block", borderRadius: 4, background: C.bgDeep }}
                     />
                     <img
                       src={entry.photos[2]}
                       alt={entry.title}
                       loading="lazy"
-                      style={{ width: "100%", height: 300, objectFit: "cover", display: "block", borderRadius: 4 }}
+                      style={{ width: "100%", maxHeight: 400, objectFit: "contain", display: "block", borderRadius: 4, background: C.bgDeep }}
                     />
                   </div>
                 </div>
@@ -3149,7 +3149,6 @@ export default function CallieShepardSite() {
           maxWidth: 1200,
           margin: "0 auto",
           background: C.bg,
-          overflow: "hidden",
         }}
         className="callie-site-page"
       >
