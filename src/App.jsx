@@ -223,7 +223,7 @@ function Footer() {
 
 function PageHeader({ eyebrow, title, intro }) {
   return (
-    <div style={{ padding: "36px 48px 36px" }}>
+    <div style={{ padding: "36px 48px 36px", textAlign: "center" }}>
       {eyebrow && (
         <div
           style={{
@@ -259,7 +259,7 @@ function PageHeader({ eyebrow, title, intro }) {
             lineHeight: 1.65,
             color: C.textBody,
             maxWidth: 640,
-            margin: 0,
+            margin: "0 auto",
             fontFamily: FONT_SANS,
           }}
         >
@@ -277,7 +277,7 @@ function HomePage({ onNav }) {
   return (
     <>
       {/* Hero */}
-      <div style={{ padding: "72px 48px 32px" }}>
+      <div style={{ padding: "72px 48px 32px", textAlign: "center" }}>
         <h1
           style={{
             fontFamily: FONT_SERIF,
@@ -298,7 +298,7 @@ function HomePage({ onNav }) {
             lineHeight: 1.65,
             color: C.textBody,
             maxWidth: 680,
-            margin: "0 0 22px",
+            margin: "0 auto 22px",
             fontFamily: FONT_SANS,
           }}
         >
@@ -1910,6 +1910,7 @@ function TravelPage() {
             borderRadius: 12,
             padding: "36px 36px 32px",
             background: C.bgDeep,
+            textAlign: "center",
           }}
         >
           <div
@@ -1930,7 +1931,7 @@ function TravelPage() {
               fontSize: 16,
               lineHeight: 1.7,
               color: C.textBody,
-              margin: "0 0 18px",
+              margin: "0 auto 18px",
               maxWidth: 640,
               fontFamily: FONT_SANS,
             }}
@@ -1945,7 +1946,7 @@ function TravelPage() {
               fontSize: 16,
               lineHeight: 1.7,
               color: C.textBody,
-              margin: "0 0 28px",
+              margin: "0 auto 28px",
               maxWidth: 640,
               fontFamily: FONT_SANS,
             }}
@@ -2467,7 +2468,7 @@ function FitnessPage() {
       </div>
 
       {/* Closing reflection */}
-      <div id="fitness-reflection" style={{ padding: "0 48px 28px", maxWidth: 720 }}>
+      <div id="fitness-reflection" style={{ padding: "0 48px 28px", maxWidth: 720, margin: "0 auto", textAlign: "center" }}>
         <p
           style={{
             fontSize: 16,
@@ -2525,7 +2526,7 @@ function FitnessPage() {
 // ============================================================
 const STYLE_ENTRIES = [
   { title: "From the Heart to the Hands: Dolce & Gabbana", location: "Institute of Contemporary Art, Miami", date: "March 2026", description: "An immersive exhibit presenting garments as true works of art. The craftsmanship is extraordinary, and the passion, humor, and playfulness come through in every detail. Each room is its own world.", link: "https://icamiami.org/exhibition/from-the-heart-to-the-hands-dolcegabbana/", linkText: "On View Through June", photos: ["/images/style-01-from-the-heart-to-the-hands-dolce-gabbana.jpeg", "/images/style-02.jpeg", "/images/style-03.jpeg"] },
-  { title: "Kips Bay Decorator Show House", location: "Palm Beach, Florida", date: "March 2026", description: "I've attended the Kips Bay Decorator Show House four times now and the experience never disappoints. Every room is completely transformed, and the chance to speak directly with the designers makes it personal. This year's waterfront location and expansion into a second house made it especially striking.", link: "https://www.kipsbaydecoratorshowhouse.org/pbplanyourvisit", linkText: "Learn more", photos: ["/images/style-04-kips-bay-decorator-show-house.jpeg", "/images/style-05.jpeg", "/images/style-06.jpeg"] },
+  { title: "Kips Bay Decorator Show House", location: "Palm Beach, Florida", date: "March 2026", description: "I've attended the annual Kips Bay Decorator Show House four times now and the experience never disappoints. Every room is completely transformed, and the chance to speak directly with the designers makes it personal. This year's waterfront location and expansion into a second house made it especially striking.", link: "https://www.kipsbaydecoratorshowhouse.org/pbplanyourvisit", linkText: "Learn more", photos: ["/images/style-04-kips-bay-decorator-show-house.jpeg", "/images/style-05.jpeg", "/images/style-06.jpeg"] },
 ];
 
 function StylePage() {
@@ -2842,8 +2843,8 @@ function AboutPage() {
         title="Nice to meet you."
       />
 
-      <div style={{ padding: "0 48px 48px", maxWidth: 720 }}>
-        <div style={{ fontFamily: FONT_SANS, fontSize: 16, lineHeight: 1.8, color: C.textBody }}>
+      <div style={{ padding: "0 48px 48px", maxWidth: 720, margin: "0 auto" }}>
+        <div style={{ fontFamily: FONT_SANS, fontSize: 16, lineHeight: 1.8, color: C.textBody, textAlign: "center" }}>
           <p style={{ margin: "0 0 20px" }}>
             I'm a demand planning leader with fourteen years of experience
             across fashion and consumer products. I've built planning
@@ -2887,6 +2888,7 @@ function AboutPage() {
             background: C.bgDeep,
             borderRadius: 12,
             border: `0.5px solid ${C.border}`,
+            textAlign: "center",
           }}
         >
           <div
@@ -2913,7 +2915,7 @@ function AboutPage() {
           >
             I'd love to hear from you.
           </p>
-          <div style={{ display: "flex", gap: 32, flexWrap: "wrap" }}>
+          <div style={{ display: "flex", gap: 32, flexWrap: "wrap", justifyContent: "center" }}>
             <div>
               <div
                 style={{
@@ -2958,7 +2960,7 @@ function AboutPage() {
                 Connect
               </div>
               <a
-                href="https://linkedin.com/in/callieshepard"
+                href="https://www.linkedin.com/in/callie-shepard/"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
@@ -2984,8 +2986,46 @@ function AboutPage() {
 // ============================================================
 // MAIN APP
 // ============================================================
+
+// Map between URL paths and page keys
+const PAGE_TO_PATH = {
+  home: "/",
+  work: "/work",
+  "planning-lab": "/planning-lab",
+  travel: "/travel",
+  fitness: "/fitness",
+  style: "/style",
+  about: "/about",
+};
+const PATH_TO_PAGE = Object.fromEntries(
+  Object.entries(PAGE_TO_PATH).map(([k, v]) => [v, k])
+);
+
+function getPageFromPath() {
+  if (typeof window === "undefined") return "home";
+  return PATH_TO_PAGE[window.location.pathname] || "home";
+}
+
 export default function CallieShepardSite() {
-  const [page, setPage] = useState("home");
+  const [page, setPageState] = useState(getPageFromPath);
+
+  // Wrap setPage to also update the URL
+  const setPage = (newPage) => {
+    setPageState(newPage);
+    const path = PAGE_TO_PATH[newPage] || "/";
+    if (window.location.pathname !== path) {
+      window.history.pushState({ page: newPage }, "", path);
+    }
+  };
+
+  // Handle browser back/forward buttons
+  useEffect(() => {
+    const onPopState = () => {
+      setPageState(getPageFromPath());
+    };
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+  }, []);
 
   // Load fonts from Google Fonts
   useEffect(() => {
@@ -3027,17 +3067,13 @@ export default function CallieShepardSite() {
     <div
       style={{
         minHeight: "100vh",
-        background: C.bgFrame,
-        padding: "24px",
+        background: C.bg,
         fontFamily: FONT_SANS,
       }}
       className="callie-site-root"
     >
       <style>{`
         @media (max-width: 720px) {
-          .callie-site-root {
-            padding: 12px !important;
-          }
           .callie-site-page > div {
             padding-left: 20px !important;
             padding-right: 20px !important;
@@ -3091,11 +3127,8 @@ export default function CallieShepardSite() {
       `}</style>
       <div
         style={{
-          maxWidth: 960,
-          margin: "0 auto",
+          width: "100%",
           background: C.bg,
-          borderRadius: 12,
-          border: `0.5px solid ${C.borderCard}`,
           overflow: "hidden",
         }}
         className="callie-site-page"
