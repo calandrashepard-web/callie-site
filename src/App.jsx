@@ -210,13 +210,28 @@ function Footer() {
         borderTop: `0.5px solid ${C.border}`,
         display: "flex",
         justifyContent: "space-between",
+        alignItems: "center",
+        gap: 16,
+        flexWrap: "wrap",
         fontSize: 12,
         color: C.textMuted,
         fontFamily: FONT_SANS,
       }}
     >
       <span>© 2026 Callie Shepard</span>
-      <span>Delray Beach, FL</span>
+      <div style={{ display: "flex", gap: 20, alignItems: "center", flexWrap: "wrap" }}>
+        <a
+          href="mailto:callie@callieplans.com"
+          style={{
+            color: C.textMuted,
+            textDecoration: "none",
+            fontFamily: FONT_SANS,
+          }}
+        >
+          callie@callieplans.com
+        </a>
+        <span>Delray Beach, FL</span>
+      </div>
     </div>
   );
 }
@@ -1710,7 +1725,7 @@ function TravelPage() {
   return (
     <>
       {/* Custom header with two-paragraph intro */}
-      <div style={{ padding: "36px 48px 36px" }}>
+      <div style={{ padding: "36px 48px 36px", textAlign: "center" }}>
         <div
           style={{
             fontSize: 11,
@@ -1743,7 +1758,7 @@ function TravelPage() {
             lineHeight: 1.65,
             color: C.textBody,
             maxWidth: 640,
-            margin: "0 0 18px",
+            margin: "0 auto 18px",
             fontFamily: FONT_SANS,
           }}
         >
@@ -1759,7 +1774,7 @@ function TravelPage() {
             lineHeight: 1.65,
             color: C.textBody,
             maxWidth: 640,
-            margin: 0,
+            margin: "0 auto",
             fontFamily: FONT_SANS,
           }}
         >
@@ -2534,7 +2549,7 @@ function StylePage() {
   return (
     <>
       {/* Custom header with tight spacing */}
-      <div style={{ padding: isMobile ? "36px 20px 20px" : "36px 48px 24px" }}>
+      <div style={{ padding: isMobile ? "36px 20px 20px" : "36px 48px 24px", textAlign: "center" }}>
         <div
           style={{
             fontSize: 11,
@@ -2566,7 +2581,7 @@ function StylePage() {
             fontSize: 18,
             lineHeight: 1.65,
             color: C.textBody,
-            margin: 0,
+            margin: "0 auto",
             maxWidth: 640,
             fontFamily: FONT_SANS,
           }}
@@ -3128,6 +3143,8 @@ export default function CallieShepardSite() {
       <div
         style={{
           width: "100%",
+          maxWidth: 1200,
+          margin: "0 auto",
           background: C.bg,
           overflow: "hidden",
         }}
