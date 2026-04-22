@@ -50,7 +50,10 @@ function Nav({ current, onNav }) {
     <div
       style={{
         borderBottom: `0.5px solid ${C.border}`,
-        position: "relative",
+        position: "sticky",
+        top: 0,
+        zIndex: 10,
+        background: C.bg,
       }}
     >
       <div
@@ -2654,20 +2657,20 @@ function StylePage() {
                     src={entry.photos[0]}
                     alt={entry.title}
                     loading="lazy"
-                    style={{ width: "100%", display: "block", borderRadius: 4 }}
+                    style={{ width: "100%", maxHeight: 520, objectFit: "cover", display: "block", borderRadius: 4 }}
                   />
                   <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 4 }}>
                     <img
                       src={entry.photos[1]}
                       alt={entry.title}
                       loading="lazy"
-                      style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", borderRadius: 4 }}
+                      style={{ width: "100%", height: 300, objectFit: "cover", display: "block", borderRadius: 4 }}
                     />
                     <img
                       src={entry.photos[2]}
                       alt={entry.title}
                       loading="lazy"
-                      style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", borderRadius: 4 }}
+                      style={{ width: "100%", height: 300, objectFit: "cover", display: "block", borderRadius: 4 }}
                     />
                   </div>
                 </div>
