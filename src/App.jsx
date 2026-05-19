@@ -390,7 +390,7 @@ function HomePage({ onNav }) {
             "Actively searching for my next role — from individual contributor to director, I'm open to full-time, contract, or consulting work where my experience can make an immediate impact. Currently engaged in fractional planning work.",
             "The Planning Lab is live and generating real conversation in the planning community. Find it under Work.",
             "Recently returned from a two-week road trip through North Carolina. Highlights included stops along the Blue Ridge Parkway, especially Mount Mitchell, the highest peak east of the Mississippi River at 6,684 feet.",
-            "Reading "The 7 Habits of Highly Effective People" with the Women in Retail Leadership Reading Series. We meet weekly to discuss each habit and work toward writing a personal mission statement.",
+            "Reading 'The 7 Habits of Highly Effective People' with the Women in Retail Leadership Reading Series. We meet weekly to discuss each habit and work toward writing a personal mission statement.",
             "Celebrating my birthday with dinner and a show at Mai Kai, the legendary 1956 Polynesian supper club in Fort Lauderdale.",
           ].map((text, i) => (
             <li
