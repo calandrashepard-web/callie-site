@@ -2543,6 +2543,7 @@ function FitnessPage() {
 // STYLE PAGE
 // ============================================================
 const STYLE_ENTRIES = [
+  { title: "Dior: Crafting Fashion", location: "SCAD FASH, Atlanta", date: "May 2026", description: "A sweeping retrospective of the House of Dior, organized into seven thematic sections that traced the brand's evolution from Christian Dior himself through the work of every creative director who has shaped it since, ending with current leader Jonathan Anderson. My favorite section was the Dior Gardens gallery, which gathered pieces inspired by the floral motifs that have been central to the house since its founding. A close second was the Lady Dior Art project, an ongoing initiative that invites contemporary artists to reinterpret the iconic handbag. Over thirty versions were on display, each one a reimagining of the same silhouette by a different painter, sculptor, or multimedia artist.", link: "https://www.scadfash.org/exhibitions/exhibition-dior-crafting-fashion", linkText: "Learn more", photos: ["/images/style-07-dior-crafting-fashion.jpeg", "/images/style-08.jpeg", "/images/style-09.jpeg"] },
   { title: "From the Heart to the Hands: Dolce & Gabbana", location: "Institute of Contemporary Art, Miami", date: "March 2026", description: "An immersive exhibit presenting garments as true works of art. The craftsmanship is extraordinary, and the passion, humor, and playfulness come through in every detail. Each room is its own world.", link: "https://icamiami.org/exhibition/from-the-heart-to-the-hands-dolcegabbana/", linkText: "On View Through June", photos: ["/images/style-01-from-the-heart-to-the-hands-dolce-gabbana.jpeg", "/images/style-02.jpeg", "/images/style-03.jpeg"] },
   { title: "Kips Bay Decorator Show House", location: "Palm Beach, Florida", date: "March 2026", description: "I've attended the annual Kips Bay Decorator Show House four times now and the experience never disappoints. Every room is completely transformed, and the chance to speak directly with the designers makes it personal. This year's waterfront location and expansion into a second house made it especially striking.", link: "https://www.kipsbaydecoratorshowhouse.org/pbplanyourvisit", linkText: "Learn more", photos: ["/images/style-04-kips-bay-decorator-show-house.jpeg", "/images/style-05.jpeg", "/images/style-06.jpeg"] },
 ];
@@ -2737,18 +2738,11 @@ function StylePage() {
             letterSpacing: "-0.015em",
           }}
         >
-          Up next
+          On my radar
         </h2>
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
           {[
-            {
-              timing: "On view through August 23",
-              title: "Dior: Crafting Fashion",
-              location: "SCAD FASH, Atlanta",
-              description: "A retrospective exploring seven decades of craftsmanship, technique, and artistry at the house of Dior",
-              link: "https://www.scadfash.org/exhibitions/exhibition-dior-crafting-fashion",
-              linkText: "Learn more",
-            },
+           
             {
               timing: "In theaters May 1",
               title: "The Devil Wears Prada 2",
