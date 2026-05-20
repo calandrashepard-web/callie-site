@@ -2738,7 +2738,7 @@ function StylePage() {
             letterSpacing: "-0.015em",
           }}
         >
-          On my radar
+          Up next
         </h2>
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
           {[
