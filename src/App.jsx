@@ -374,7 +374,7 @@ function HomePage({ onNav }) {
               fontFamily: FONT_SANS,
             }}
           >
-            May 2026
+            Summer 2026
           </span>
         </div>
         <ul
@@ -388,10 +388,10 @@ function HomePage({ onNav }) {
         >
           {[
             "Actively searching for my next role — from individual contributor to director, I'm open to full-time, contract, or consulting work where my experience can make an immediate impact. Currently engaged in fractional planning work.",
-            "The Planning Lab is live and generating real conversation in the planning community. Find it under Work.",
-            "Recently returned from a two-week road trip through North Carolina. Highlights included stops along the Blue Ridge Parkway, especially Mount Mitchell, the highest peak east of the Mississippi River at 6,684 feet.",
-            "Reading 'The 7 Habits of Highly Effective People' with the Women in Retail Leadership Reading Series. We meet weekly to discuss each habit and work toward writing a personal mission statement.",
-            "Celebrating my birthday with dinner and a show at Mai Kai, the legendary 1956 Polynesian supper club in Fort Lauderdale.",
+"Embracing the South Florida slow season. Less traffic, easier reservations, and a town that feels like it belongs to the locals again.",
+"Spending summer Saturday mornings with my 6-year-old nephew Frankie. Currently into card games and rubber band jewelry.",
+"The Planning Lab is live and generating real conversation in the planning community. Find it under Work.",
+"Reading 'The 7 Habits of Highly Effective People' with the Women in Retail Leadership Reading Series. We meet weekly to discuss each habit and work toward writing a personal mission statement.",
           ].map((text, i) => (
             <li
               key={i}
