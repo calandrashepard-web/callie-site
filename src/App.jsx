@@ -961,7 +961,7 @@ function WorkPage({ onNav }) {
             lineHeight: 1.7,
             color: C.textBody,
             margin: "0 0 22px",
-            maxWidth: 900,
+            maxWidth: 1000,
             fontFamily: FONT_SANS,
           }}
         >
@@ -3151,7 +3151,7 @@ function ConsultingPage({ onNav }) {
             fontSize: 18,
             lineHeight: 1.65,
             color: C.textBody,
-            maxWidth: 900,
+            maxWidth: 1000,
             margin: "0 0 18px",
             fontFamily: FONT_SANS,
           }}
@@ -3166,7 +3166,7 @@ function ConsultingPage({ onNav }) {
             fontSize: 18,
             lineHeight: 1.65,
             color: C.textBody,
-            maxWidth: 900,
+            maxWidth: 1000,
             margin: 0,
             fontFamily: FONT_SANS,
           }}
@@ -3204,7 +3204,7 @@ function ConsultingPage({ onNav }) {
             margin: 0,
             display: "grid",
             gap: 16,
-            maxWidth: 900,
+            maxWidth: 1000,
           }}
         >
           {problems.map((text, i) => (
@@ -3258,7 +3258,7 @@ function ConsultingPage({ onNav }) {
             fontSize: 16,
             lineHeight: 1.7,
             color: C.textBody,
-            maxWidth: 900,
+            maxWidth: 1000,
             margin: "0 0 22px",
             fontFamily: FONT_SANS,
           }}
@@ -3273,7 +3273,7 @@ function ConsultingPage({ onNav }) {
             flexWrap: "wrap",
             gap: 8,
             marginBottom: 22,
-            maxWidth: 900,
+            maxWidth: 1000,
           }}
         >
           {disciplines.map((item) => (
@@ -3298,7 +3298,7 @@ function ConsultingPage({ onNav }) {
             fontSize: 16,
             lineHeight: 1.7,
             color: C.textBody,
-            maxWidth: 900,
+            maxWidth: 1000,
             margin: 0,
             fontFamily: FONT_SANS,
           }}
@@ -3398,7 +3398,7 @@ function ConsultingPage({ onNav }) {
             fontSize: 16,
             lineHeight: 1.7,
             color: C.textBody,
-            maxWidth: 900,
+            maxWidth: 1000,
             margin: "0 0 18px",
             fontFamily: FONT_SANS,
           }}
@@ -3414,7 +3414,7 @@ function ConsultingPage({ onNav }) {
             fontSize: 16,
             lineHeight: 1.7,
             color: C.textBody,
-            maxWidth: 900,
+            maxWidth: 1000,
             margin: 0,
             fontFamily: FONT_SANS,
           }}
