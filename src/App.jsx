@@ -320,7 +320,7 @@ function HomePage({ onNav }) {
             fontFamily: FONT_SANS,
           }}
         >
-          I'm a Demand Planner by trade — fourteen years across fashion, CPG,
+          I'm a Demand Planner by trade — fifteen years across fashion, CPG,
           and wellness — and a Certified Travel Advisor and Personal Trainer on
           the side. What connects it all is a love of planning: merchandise,
           trips, workouts, outfits, anything worth doing well.
@@ -616,7 +616,7 @@ function HomePage({ onNav }) {
                 fontFamily: FONT_SANS,
               }}
             >
-              14 years building planning functions across fashion, CPG, and
+              15 years building planning functions across fashion, CPG, and
               wellness. Bloomingdale's, Boston Proper, REDCON1, and more.
             </div>
           </button>
@@ -922,29 +922,52 @@ function WorkPage({ onNav }) {
         </div>
       </div>
 
-      {/* Top CTA — inline resume request */}
-      <div
+     <div
         style={{
-          padding: "0 48px 40px",
-          fontSize: 14,
-          color: C.textMuted,
-          fontFamily: FONT_SANS,
-          fontStyle: "italic",
+          padding: "36px 48px",
+          borderTop: `0.5px solid ${C.border}`,
+          background: C.bgDeep,
         }}
       >
-        Need a resume?{" "}
-        <a
-          href="mailto:callie@callieplans.com?subject=Resume%20request"
+        <div
           style={{
+            fontSize: 11,
             color: C.pink,
+            letterSpacing: "2px",
+            textTransform: "uppercase",
             fontWeight: 500,
-            textDecoration: "none",
-            fontStyle: "normal",
+            marginBottom: 16,
+            fontFamily: FONT_SANS,
           }}
         >
-          Get in touch →
-        </a>
-      </div>
+          Consulting
+        </div>
+        <h2
+          style={{
+            fontFamily: FONT_SERIF,
+            fontSize: 28,
+            fontWeight: 500,
+            margin: "0 0 18px",
+            color: C.text,
+            letterSpacing: "-0.015em",
+            maxWidth: 620,
+          }}
+        >
+          When manual planning stops keeping up
+        </h2>
+        <p
+          style={{
+            fontSize: 16,
+            lineHeight: 1.7,
+            color: C.textBody,
+            margin: "0 0 22px",
+            maxWidth: 660,
+            fontFamily: FONT_SANS,
+          }}
+        >
+          Growing brands reach a point where the spreadsheet that got them
+          here cannot answer the questions they now need answered. Demand
+          outpaces what anyone can track by hand,
 
       {/* Featured project */}
       <div
@@ -2858,7 +2881,7 @@ function AboutPage() {
       <div style={{ padding: "0 48px 48px", maxWidth: 720, margin: "0 auto" }}>
         <div style={{ fontFamily: FONT_SANS, fontSize: 16, lineHeight: 1.8, color: C.textBody, textAlign: "center" }}>
           <p style={{ margin: "0 0 20px" }}>
-            I'm a demand planning leader with fourteen years of experience
+            I'm a demand planning leader with fifteen years of experience
             across fashion and consumer products. I've built planning
             infrastructure from the ground up, led forecasting across complex
             product portfolios, and partnered cross-functionally across
@@ -2996,6 +3019,485 @@ function AboutPage() {
 }
 
 // ============================================================
+// CONSULTING PAGE (sub-page of Work)
+// Paste this block into app.jsx directly ABOVE the
+// "// MAIN APP" comment banner.
+// ============================================================
+function ConsultingPage({ onNav }) {
+  const isMobile = useIsMobile();
+
+  const problems = [
+    "Planning is not a function at your company. It is a task that landed on someone capable who has never done it before.",
+    "You find out about a stockout when a customer does.",
+    "Purchase orders go in on gut feel because nothing tells you what to order.",
+    "Marketing, operations, and finance each work from a different number.",
+    "You have the data. What you do not have is a report that makes sense of it, or anyone to show you what to do with it.",
+  ];
+
+  const disciplines = [
+    "Demand forecasting",
+    "Open to buy",
+    "Sell through analysis",
+    "Assortment and category strategy",
+    "Purchase order timing",
+    "Raw material planning",
+    "Markdown strategy",
+  ];
+
+  const services = [
+    {
+      title: "Sales analysis and assortment",
+      body: "Reporting on what is selling by category, channel, and customer, plus working with your merchant team on what to carry, where the range has gaps, and what is not earning its place.",
+    },
+    {
+      title: "Forecasting tools",
+      body: "SKU-level demand plans built on real sales history, seasonality, and launch timing, in a file your team can run without me.",
+    },
+    {
+      title: "Inventory planning",
+      body: "Turning the demand plan into buy quantities, open to buy, and purchase order timing, including raw material needs for brands that manufacture.",
+    },
+    {
+      title: "Inventory productivity",
+      body: "A read on what you own now: sell through, aged stock, margin by category, and where cash is sitting still.",
+    },
+    {
+      title: "S&OP process",
+      body: "A monthly rhythm that puts marketing, operations, and finance on the same set of numbers.",
+    },
+  ];
+
+  return (
+    <>
+      {/* Breadcrumb back to Work */}
+      <div style={{ padding: "32px 48px 0" }}>
+        <button
+          onClick={() => onNav("work")}
+          style={{
+            background: "none",
+            border: "none",
+            cursor: "pointer",
+            fontSize: 12,
+            color: C.textMuted,
+            fontFamily: FONT_SANS,
+            letterSpacing: "1px",
+            textTransform: "uppercase",
+            padding: 0,
+            fontWeight: 500,
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.color = C.pink;
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.color = C.textMuted;
+          }}
+        >
+          ← Back to Work
+        </button>
+      </div>
+
+      {/* Hero */}
+      <div style={{ padding: "24px 48px 36px" }}>
+        <div
+          style={{
+            fontSize: 11,
+            color: C.pink,
+            letterSpacing: "2px",
+            textTransform: "uppercase",
+            fontWeight: 500,
+            marginBottom: 20,
+            fontFamily: FONT_SANS,
+          }}
+        >
+          Consulting
+        </div>
+        <h1
+          style={{
+            fontFamily: FONT_SERIF,
+            fontSize: 56,
+            fontWeight: 500,
+            lineHeight: 1.05,
+            margin: "0 0 24px",
+            color: C.text,
+            letterSpacing: "-0.02em",
+            maxWidth: 780,
+          }}
+        >
+          When manual planning stops keeping up
+        </h1>
+        <p
+          style={{
+            fontSize: 18,
+            lineHeight: 1.65,
+            color: C.textBody,
+            maxWidth: 660,
+            margin: "0 0 18px",
+            fontFamily: FONT_SANS,
+          }}
+        >
+          Growing brands reach a point where the spreadsheet that got them here
+          cannot answer the questions they now need answered. Demand outpaces
+          what anyone can track by hand, or cash gets stuck in product that will
+          not move. Usually both, in the same quarter.
+        </p>
+        <p
+          style={{
+            fontSize: 18,
+            lineHeight: 1.65,
+            color: C.textBody,
+            maxWidth: 660,
+            margin: 0,
+            fontFamily: FONT_SANS,
+          }}
+        >
+          I build the forecasting, reporting, and inventory systems that replace
+          the guesswork, then hand them to your team so the process keeps
+          running after the engagement ends.
+        </p>
+      </div>
+
+      {/* Sound familiar? */}
+      <div
+        style={{
+          padding: "32px 48px",
+          borderTop: `0.5px solid ${C.border}`,
+          background: C.bgDeep,
+        }}
+      >
+        <h2
+          style={{
+            fontFamily: FONT_SERIF,
+            fontSize: 28,
+            fontWeight: 500,
+            margin: "0 0 26px",
+            color: C.text,
+            letterSpacing: "-0.015em",
+          }}
+        >
+          Sound familiar?
+        </h2>
+        <ul
+          style={{
+            listStyle: "none",
+            padding: 0,
+            margin: 0,
+            display: "grid",
+            gap: 16,
+            maxWidth: 700,
+          }}
+        >
+          {problems.map((text, i) => (
+            <li
+              key={i}
+              style={{
+                display: "flex",
+                gap: 16,
+                fontSize: 15,
+                lineHeight: 1.55,
+                fontFamily: FONT_SANS,
+              }}
+            >
+              <span
+                style={{
+                  width: 6,
+                  height: 6,
+                  borderRadius: "50%",
+                  background: C.pink,
+                  marginTop: 9,
+                  flexShrink: 0,
+                }}
+              />
+              <span style={{ color: C.textBody }}>{text}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* What's missing? */}
+      <div
+        style={{
+          padding: "36px 48px",
+          borderTop: `0.5px solid ${C.border}`,
+        }}
+      >
+        <h2
+          style={{
+            fontFamily: FONT_SERIF,
+            fontSize: 28,
+            fontWeight: 500,
+            margin: "0 0 20px",
+            color: C.text,
+            letterSpacing: "-0.015em",
+          }}
+        >
+          What's missing?
+        </h2>
+        <p
+          style={{
+            fontSize: 16,
+            lineHeight: 1.7,
+            color: C.textBody,
+            maxWidth: 660,
+            margin: "0 0 22px",
+            fontFamily: FONT_SANS,
+          }}
+        >
+          At a large brand, this work is spread across a planning department. At
+          yours, it sits with one person doing it between everything else, or
+          with nobody at all.
+        </p>
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: 8,
+            marginBottom: 22,
+            maxWidth: 700,
+          }}
+        >
+          {disciplines.map((item) => (
+            <span
+              key={item}
+              style={{
+                fontSize: 12,
+                padding: "6px 12px",
+                background: C.bg,
+                border: `0.5px solid ${C.border}`,
+                borderRadius: 999,
+                color: C.textBody,
+                fontFamily: FONT_SANS,
+              }}
+            >
+              {item}
+            </span>
+          ))}
+        </div>
+        <p
+          style={{
+            fontSize: 16,
+            lineHeight: 1.7,
+            color: C.textBody,
+            maxWidth: 660,
+            margin: 0,
+            fontFamily: FONT_SANS,
+          }}
+        >
+          Most operators have never had anyone name these as separate
+          disciplines, which is why the gaps are hard to see from inside.
+        </p>
+      </div>
+
+      {/* What I do */}
+      <div
+        style={{
+          padding: "36px 48px",
+          borderTop: `0.5px solid ${C.border}`,
+        }}
+      >
+        <div
+          style={{
+            fontSize: 11,
+            color: C.pink,
+            letterSpacing: "2px",
+            textTransform: "uppercase",
+            fontWeight: 500,
+            marginBottom: 20,
+            fontFamily: FONT_SANS,
+          }}
+        >
+          What I do
+        </div>
+        <div
+          className="grid-2-cols"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+            gap: 14,
+          }}
+        >
+          {services.map((service) => (
+            <div
+              key={service.title}
+              style={{
+                border: `0.5px solid ${C.border}`,
+                borderRadius: 8,
+                padding: 22,
+                background: C.bg,
+              }}
+            >
+              <div
+                style={{
+                  fontFamily: FONT_SERIF,
+                  fontSize: 17,
+                  fontWeight: 500,
+                  marginBottom: 8,
+                  color: C.text,
+                  letterSpacing: "-0.01em",
+                }}
+              >
+                {service.title}
+              </div>
+              <p
+                style={{
+                  fontSize: 13,
+                  lineHeight: 1.6,
+                  color: C.textBody,
+                  margin: 0,
+                  fontFamily: FONT_SANS,
+                }}
+              >
+                {service.body}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Background */}
+      <div
+        style={{
+          padding: "36px 48px",
+          borderTop: `0.5px solid ${C.border}`,
+        }}
+      >
+        <h2
+          style={{
+            fontFamily: FONT_SERIF,
+            fontSize: 28,
+            fontWeight: 500,
+            margin: "0 0 20px",
+            color: C.text,
+            letterSpacing: "-0.015em",
+          }}
+        >
+          Background
+        </h2>
+        <p
+          style={{
+            fontSize: 16,
+            lineHeight: 1.7,
+            color: C.textBody,
+            maxWidth: 660,
+            margin: "0 0 18px",
+            fontFamily: FONT_SANS,
+          }}
+        >
+          Fifteen years leading demand and inventory planning across fashion,
+          CPG, and wellness, including Bloomingdale's, Saks, Boston Proper,
+          Vitacost, Parks Project, and G.O.A.T. Foods. I have built planning
+          functions from the ground up four times, most recently as a
+          consultant, for businesses ranging from early stage startups to $300M+.
+        </p>
+        <p
+          style={{
+            fontSize: 16,
+            lineHeight: 1.7,
+            color: C.textBody,
+            maxWidth: 660,
+            margin: 0,
+            fontFamily: FONT_SANS,
+          }}
+        >
+          To get a peek into my approach, check out{" "}
+          <button
+            onClick={() => onNav("planning-lab")}
+            style={{
+              background: "none",
+              border: "none",
+              padding: 0,
+              cursor: "pointer",
+              fontSize: 16,
+              color: C.pink,
+              fontWeight: 500,
+              fontFamily: FONT_SANS,
+              borderBottom: `1px solid ${C.pink}`,
+            }}
+          >
+            The Planning Lab
+          </button>
+          , a simulator that runs through the buying and forecasting decisions a
+          planning team makes across a season.
+        </p>
+      </div>
+
+      {/* CTA */}
+      <div style={{ padding: "32px 48px 56px" }}>
+        <div
+          style={{
+            border: `0.5px solid ${C.border}`,
+            borderRadius: 12,
+            padding: isMobile ? "28px 24px" : "36px 36px",
+            background: C.bgDeep,
+            textAlign: "center",
+          }}
+        >
+          <div
+            style={{
+              fontFamily: FONT_SERIF,
+              fontSize: 26,
+              fontWeight: 500,
+              color: C.text,
+              marginBottom: 14,
+              letterSpacing: "-0.015em",
+            }}
+          >
+            Start with a conversation
+          </div>
+          <p
+            style={{
+              fontSize: 16,
+              lineHeight: 1.7,
+              color: C.textBody,
+              margin: "0 auto 26px",
+              maxWidth: 560,
+              fontFamily: FONT_SANS,
+            }}
+          >
+            Most engagements begin with a short call about how planning works in
+            your business today. Send me a note and let's see how I can help.
+          </p>
+          <a
+            href="mailto:callie@callieplans.com?subject=Consulting%20inquiry"
+            style={{
+              display: "inline-block",
+              padding: "14px 26px",
+              background: C.pink,
+              color: "#fff",
+              fontSize: 14,
+              fontWeight: 500,
+              fontFamily: FONT_SANS,
+              borderRadius: 999,
+              textDecoration: "none",
+              transition: "background 0.2s",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = C.pinkHover;
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = C.pink;
+            }}
+          >
+            callie@callieplans.com →
+          </a>
+          <div
+            style={{
+              fontSize: 12,
+              color: C.textMuted,
+              fontFamily: FONT_SANS,
+              marginTop: 18,
+              letterSpacing: "0.02em",
+            }}
+          >
+            Callie Plans
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+
+// ============================================================
 // MAIN APP
 // ============================================================
 
@@ -3004,6 +3506,7 @@ const PAGE_TO_PATH = {
   home: "/",
   work: "/work",
   "planning-lab": "/planning-lab",
+  consulting: "/work/consulting",
   travel: "/travel",
   fitness: "/fitness",
   style: "/style",
@@ -3062,6 +3565,8 @@ export default function CallieShepardSite() {
         return <WorkPage onNav={setPage} />;
       case "planning-lab":
         return <PlanningLabPage onNav={setPage} />;
+        case "consulting":
+        return <ConsultingPage onNav={setPage} />;
       case "travel":
         return <TravelPage />;
       case "fitness":
