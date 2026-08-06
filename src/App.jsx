@@ -967,7 +967,28 @@ function WorkPage({ onNav }) {
         >
           Growing brands reach a point where the spreadsheet that got them
           here cannot answer the questions they now need answered. Demand
-          outpaces what anyone can track by hand,
+          outpaces what anyone can track by hand, or cash gets stuck in
+          product that will not move. If that sounds like your business, I
+          take on fractional and project work.
+        </p>
+        <button
+          onClick={() => onNav("consulting")}
+          style={{
+            background: "none",
+            border: "none",
+            padding: 0,
+            cursor: "pointer",
+            fontSize: 14,
+            color: C.pink,
+            fontWeight: 500,
+            fontFamily: FONT_SANS,
+            borderBottom: `1px solid ${C.pink}`,
+            paddingBottom: 2,
+          }}
+        >
+          See how I work →
+        </button>
+      </div>
 
       {/* Featured project */}
       <div
