@@ -321,8 +321,8 @@ function HomePage({ onNav }) {
           }}
         >
           I'm a Demand Planner by trade — fifteen years across fashion, CPG,
-          and wellness — and a Certified Travel Advisor and Personal Trainer on
-          the side. What connects it all is a love of planning: merchandise,
+          and wellness — and an avid traveler and Certified Personal Trainer
+          on the side. What connects it all is a love of planning: merchandise,
           trips, workouts, outfits, anything worth doing well.
         </p>
         <p
@@ -699,7 +699,7 @@ function HomePage({ onNav }) {
             {
               title: "Travel",
               page: "travel",
-              body: "Certified Fora Travel Advisor. Recent trips, favorite destinations, and hidden gems for your next getaway.",
+              body: "Recent trips, all-time favorite destinations, and the places still on my list.",
             },
             {
               title: "Fitness",
@@ -1815,21 +1815,6 @@ function TravelPage() {
           almost always plan trips around something to climb, walk, or explore
           on foot.
         </p>
-        <p
-          style={{
-            fontSize: 18,
-            lineHeight: 1.65,
-            color: C.textBody,
-            maxWidth: 640,
-            margin: "0 auto",
-            fontFamily: FONT_SANS,
-          }}
-        >
-          I'm also a Certified Fora Travel Advisor, which means I plan trips
-          for other people too. After years of doing it for myself, I know
-          what makes a hotel worth staying at, a hike worth taking, and a
-          city worth visiting twice.
-        </p>
       </div>
 
       {/* Specialties section */}
@@ -1842,7 +1827,7 @@ function TravelPage() {
             background: C.bgDeep,
           }}
         >
-          <div style={{ marginBottom: 24 }}>
+          <div>
             <div
               style={{
                 fontSize: 11,
@@ -1854,7 +1839,7 @@ function TravelPage() {
                 fontFamily: FONT_SANS,
               }}
             >
-              I specialize in
+              The trips I take
             </div>
             <div
               className="specialty-row"
@@ -1883,44 +1868,6 @@ function TravelPage() {
                   )}
                 </React.Fragment>
               ))}
-            </div>
-          </div>
-          <div>
-            <div
-              style={{
-                fontSize: 11,
-                color: C.pink,
-                letterSpacing: "2px",
-                textTransform: "uppercase",
-                fontWeight: 500,
-                marginBottom: 12,
-                fontFamily: FONT_SANS,
-              }}
-            >
-              I know best
-            </div>
-            <div
-              className="specialty-row"
-              style={{
-                display: "flex",
-                flexWrap: "wrap",
-                alignItems: "center",
-                gap: "6px 0",
-                fontSize: 16,
-                color: C.textBody,
-                lineHeight: 1.7,
-                fontFamily: FONT_SANS,
-              }}
-            >
-              {["The Southwest", "The Mountain West", "The Southeast", "New England"].map((item, i, arr) => (
-                <React.Fragment key={item}>
-                  <span className="specialty-item" style={{ whiteSpace: "nowrap" }}>{item}</span>
-                  {i < arr.length - 1 && (
-                    <span className="specialty-dot" style={{ color: C.textMuted, margin: "0 8px" }}>·</span>
-                  )}
-                </React.Fragment>
-              ))}
-              <span className="specialty-suffix" style={{ color: C.textMuted, marginLeft: 8 }}>— with specialties in California and Florida.</span>
             </div>
           </div>
         </div>
@@ -1961,98 +1908,6 @@ function TravelPage() {
           {TRAVEL_PHOTOS.map((photo, i) => (
             <GalleryPhoto key={i} photo={photo} isMobile={isMobile} />
           ))}
-        </div>
-      </div>
-
-      {/* Work With Me block */}
-      <div style={{ padding: "0 48px 32px" }}>
-        <div
-          style={{
-            border: `0.5px solid ${C.border}`,
-            borderRadius: 12,
-            padding: "36px 36px 32px",
-            background: C.bgDeep,
-            textAlign: "center",
-          }}
-        >
-          <div
-            style={{
-              fontSize: 11,
-              color: C.pink,
-              letterSpacing: "2px",
-              textTransform: "uppercase",
-              fontWeight: 500,
-              marginBottom: 14,
-              fontFamily: FONT_SANS,
-            }}
-          >
-            Work with me
-          </div>
-          <p
-            style={{
-              fontSize: 16,
-              lineHeight: 1.7,
-              color: C.textBody,
-              margin: "0 auto 18px",
-              maxWidth: 640,
-              fontFamily: FONT_SANS,
-            }}
-          >
-            I plan trips for friends, family, and clients as a Certified Fora
-            Travel Advisor — which means I can book hotels, resorts, and other
-            travel experiences with perks like room upgrades, food and beverage
-            credits, and early check-in that you can't get booking direct.
-          </p>
-          <p
-            style={{
-              fontSize: 16,
-              lineHeight: 1.7,
-              color: C.textBody,
-              margin: "0 auto 28px",
-              maxWidth: 640,
-              fontFamily: FONT_SANS,
-            }}
-          >
-            I'm happy to plan a whole itinerary from scratch or just book a
-            hotel you've already chosen. I can be as involved (or as hands-off)
-            as you want. Either way, you'll have a direct line to me before,
-            during, and after your trip.
-          </p>
-          <div
-            style={{
-              fontFamily: FONT_SERIF,
-              fontSize: 18,
-              fontWeight: 500,
-              color: C.text,
-              marginBottom: 12,
-              letterSpacing: "-0.005em",
-            }}
-          >
-            Ready to start planning?
-          </div>
-          <a
-            href="mailto:callie.shepard@fora.travel?subject=Trip%20inquiry"
-            style={{
-              display: "inline-block",
-              padding: "12px 22px",
-              background: C.pink,
-              color: "#fff",
-              fontSize: 14,
-              fontWeight: 500,
-              fontFamily: FONT_SANS,
-              borderRadius: 999,
-              textDecoration: "none",
-              transition: "background 0.2s",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = C.pinkHover;
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = C.pink;
-            }}
-          >
-            Get in touch →
-          </a>
         </div>
       </div>
 
@@ -2142,49 +1997,77 @@ function TravelPage() {
         </div>
       </div>
 
-      {/* Closing CTA */}
-      <div
-        style={{
-          padding: "48px 48px 80px",
-          textAlign: "center",
-          borderTop: `0.5px solid ${C.border}`,
-        }}
-      >
-        <div
+      {/* On my list */}
+      <div style={{ padding: "0 48px 64px" }}>
+        <h2
           style={{
             fontFamily: FONT_SERIF,
-            fontSize: 36,
+            fontSize: 24,
             fontWeight: 500,
+            margin: "0 0 20px",
             color: C.text,
-            letterSpacing: "-0.02em",
-            marginBottom: 24,
+            letterSpacing: "-0.015em",
           }}
         >
-          Thinking about a trip?
-        </div>
-        <a
-          href="mailto:callie.shepard@fora.travel?subject=Trip%20inquiry"
+          On my list
+        </h2>
+        <div
+          className="grid-3-cols"
           style={{
-            display: "inline-block",
-            padding: "14px 26px",
-            background: C.pink,
-            color: "#fff",
-            fontSize: 14,
-            fontWeight: 500,
-            fontFamily: FONT_SANS,
-            borderRadius: 999,
-            textDecoration: "none",
-            transition: "background 0.2s",
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.background = C.pinkHover;
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.background = C.pink;
+            display: "grid",
+            gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
+            gap: 14,
           }}
         >
-          Get in touch →
-        </a>
+          {[
+            {
+              name: "Greece",
+              note: "Cycladic architecture, the Chora villages, and ancient stone trails & lighthouses.",
+            },
+            {
+              name: "New Mexico",
+              note: "The historic adobe buildings of Santa Fe, the Georgia O'Keeffe Museum, and the Albuquerque International Balloon Fiesta.",
+            },
+            {
+              name: "Montana",
+              note: "The turquoise lakes of Glacier National Park, the rustic and eclectic charm of Bozeman, and maybe a few real cowboys.",
+            },
+          ].map((place) => (
+            <div
+              key={place.name}
+              style={{
+                border: `0.5px solid ${C.border}`,
+                borderRadius: 8,
+                padding: "22px 22px 24px",
+                background: C.bg,
+              }}
+            >
+              <div
+                style={{
+                  fontFamily: FONT_SERIF,
+                  fontSize: 18,
+                  fontWeight: 500,
+                  marginBottom: 10,
+                  color: C.text,
+                  letterSpacing: "-0.005em",
+                }}
+              >
+                {place.name}
+              </div>
+              <div
+                style={{
+                  fontSize: 14,
+                  color: C.textBody,
+                  fontFamily: FONT_SANS,
+                  lineHeight: 1.55,
+                }}
+              >
+                <span style={{ color: C.textMuted }}>What I want to see:</span>{" "}
+                {place.note}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </>
   );
