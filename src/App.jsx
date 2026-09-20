@@ -374,7 +374,7 @@ function HomePage({ onNav }) {
               fontFamily: FONT_SANS,
             }}
           >
-            Summer 2026
+            Fall 2026
           </span>
         </div>
         <ul
@@ -387,11 +387,11 @@ function HomePage({ onNav }) {
           }}
         >
           {[
-            "Actively searching for my next role — from individual contributor to director, I'm open to full-time, contract, or consulting work where my experience can make an immediate impact. Currently engaged in fractional planning work.",
-"Embracing the South Florida slow season. Less traffic, easier reservations, and a town that feels like it belongs to the locals again.",
-"Spending summer Saturday mornings with my 6-year-old nephew Frankie. Currently into card games and rubber band jewelry.",
-"The Planning Lab is live and generating real conversation in the planning community. Find it under Work.",
-"Reading 'The 7 Habits of Highly Effective People' with the Women in Retail Leadership Reading Series. We meet weekly to discuss each habit and work toward writing a personal mission statement.",
+            "Callie Plans is open for business. I'm taking on fractional and project-based planning work for growing brands and retailers, with room for new engagements this fall.",
+            "Hit 500 strength and conditioning classes at The Lab, my gym in Delray Beach, and I'm the first member to reach the mark!",
+            "Spent a week in western North Carolina for a wedding and some quiet time in nature. Hiked two sections of the Appalachian Trail, topping out on Siler Bald at 5,216 feet.",
+            "The Planning Lab is live. Play it under Work, and I'd welcome your ideas on new scenarios or features.",
+            "Tickets secured for the 2028 Olympics. Women's soccer in St. Louis, which means a summer trip to visit my dad and a once in a lifetime experience for us both!",
           ].map((text, i) => (
             <li
               key={i}
@@ -2524,8 +2524,122 @@ function StylePage() {
         </p>
       </div>
 
+      {/* Up Next */}
+      <div style={{ padding: isMobile ? "16px 20px 0" : "16px 48px 0" }}>
+        <h2
+          style={{
+            fontFamily: FONT_SERIF,
+            fontSize: isMobile ? 22 : 24,
+            fontWeight: 500,
+            margin: "0 0 20px",
+            color: C.text,
+            letterSpacing: "-0.015em",
+          }}
+        >
+          Up next
+        </h2>
+        <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+          {[
+            {
+              timing: "On view through February 28",
+              title: "Foot Notes: Shoes, Symbolism, and Society",
+              location: "The Wolfsonian-FIU, Miami Beach",
+              description: "Footwear of the early twentieth century, and what shoe design reveals about politics, identity, and everyday life",
+              link: "https://wolfsonian.org/whats-on/exhibitions+installations/2026/07/foot-notes-shoes-symbolism-and-society.html",
+              linkText: "Learn more",
+            },
+            {
+              timing: "Opens October 15",
+              title: "C.Z. Guest: Portrait of an American Style Icon",
+              location: "SCAD FASH Museum of Fashion + Film, Atlanta",
+              description: "Guest's own wardrobe of Oscar de la Renta, Chanel, and Yves Saint Laurent, with portraits by Cecil Beaton and Andy Warhol",
+              link: "https://www.scadfash.org/exhibitions/cz-guest-portrait-american-style-icon",
+              linkText: "Learn more",
+            },
+          ].map((item, i) => (
+            <div
+              key={i}
+              style={{
+                borderLeft: `3px solid ${C.pink}`,
+                background: C.bgDeep,
+                borderRadius: 0,
+                padding: isMobile ? "14px 16px" : "16px 20px",
+              }}
+            >
+              <div
+                style={{
+                  fontSize: 11,
+                  color: C.pink,
+                  letterSpacing: "2px",
+                  textTransform: "uppercase",
+                  fontWeight: 500,
+                  marginBottom: 6,
+                  fontFamily: FONT_SANS,
+                }}
+              >
+                {item.timing}
+              </div>
+              <div
+                style={{
+                  fontFamily: FONT_SERIF,
+                  fontSize: isMobile ? 16 : 17,
+                  fontWeight: 500,
+                  margin: "0 0 4px",
+                  color: C.text,
+                  letterSpacing: "-0.005em",
+                }}
+              >
+                {item.title}
+              </div>
+              <div
+                style={{
+                  fontSize: 13,
+                  color: C.textMuted,
+                  marginBottom: item.description ? 4 : (item.link ? 8 : 0),
+                  fontFamily: FONT_SANS,
+                  lineHeight: 1.5,
+                }}
+              >
+                {item.location}
+              </div>
+              {item.description && (
+                <div
+                  style={{
+                    fontSize: 13,
+                    color: C.textMuted,
+                    marginBottom: item.link ? 8 : 0,
+                    fontFamily: FONT_SANS,
+                    lineHeight: 1.5,
+                  }}
+                >
+                  {item.description}
+                </div>
+              )}
+              {item.link && (
+                <a
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    fontSize: 13,
+                    color: C.pink,
+                    fontWeight: 500,
+                    fontFamily: FONT_SANS,
+                    textDecoration: "none",
+                    borderBottom: `1px solid ${C.pink}`,
+                    paddingBottom: 2,
+                  }}
+                >
+                  {item.linkText} →
+                </a>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* Entries */}
-      <div style={{ padding: isMobile ? "16px 20px 48px" : "16px 48px 48px" }}>
+      <div style={{ padding: isMobile ? "24px 20px 48px" : "32px 48px 48px" }}>
         <div style={{ display: "flex", flexDirection: "column", gap: 40 }}>
           {STYLE_ENTRIES.map((entry, i) => (
             <div
@@ -2653,120 +2767,6 @@ function StylePage() {
         </div>
       </div>
 
-      {/* Up Next */}
-      <div style={{ padding: isMobile ? "0 20px 48px" : "0 48px 48px" }}>
-        <h2
-          style={{
-            fontFamily: FONT_SERIF,
-            fontSize: isMobile ? 22 : 24,
-            fontWeight: 500,
-            margin: "0 0 20px",
-            color: C.text,
-            letterSpacing: "-0.015em",
-          }}
-        >
-          Up next
-        </h2>
-        <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-          {[
-           
-            {
-              timing: "In theaters May 1",
-              title: "The Devil Wears Prada 2",
-              location: "",
-              description: "Highly anticipated sequel to the beloved film, inspired by the life of Vogue editor Anna Wintour and her team",
-              link: "https://www.20thcenturystudios.com/movies/the-devil-wears-prada-2",
-              linkText: "Learn more",
-            },
-            {
-              timing: "Opens May 10",
-              title: "Costume Art",
-              location: "The Metropolitan Museum of Art, New York",
-              description: "The Met Costume Institute's celebrated annual spring exhibition, opening to the public following The Met Gala on May 4",
-              link: "https://www.metmuseum.org/exhibitions/costume-art",
-              linkText: "Learn more",
-            },
-          ].map((item, i) => (
-            <div
-              key={i}
-              style={{
-                borderLeft: `3px solid ${C.pink}`,
-                background: C.bgDeep,
-                borderRadius: 0,
-                padding: isMobile ? "14px 16px" : "16px 20px",
-              }}
-            >
-              <div
-                style={{
-                  fontSize: 11,
-                  color: C.pink,
-                  letterSpacing: "2px",
-                  textTransform: "uppercase",
-                  fontWeight: 500,
-                  marginBottom: 6,
-                  fontFamily: FONT_SANS,
-                }}
-              >
-                {item.timing}
-              </div>
-              <div
-                style={{
-                  fontFamily: FONT_SERIF,
-                  fontSize: isMobile ? 16 : 17,
-                  fontWeight: 500,
-                  margin: "0 0 4px",
-                  color: C.text,
-                  letterSpacing: "-0.005em",
-                }}
-              >
-                {item.title}
-              </div>
-              <div
-                style={{
-                  fontSize: 13,
-                  color: C.textMuted,
-                  marginBottom: item.description ? 4 : (item.link ? 8 : 0),
-                  fontFamily: FONT_SANS,
-                  lineHeight: 1.5,
-                }}
-              >
-                {item.location}
-              </div>
-              {item.description && (
-                <div
-                  style={{
-                    fontSize: 13,
-                    color: C.textMuted,
-                    marginBottom: item.link ? 8 : 0,
-                    fontFamily: FONT_SANS,
-                    lineHeight: 1.5,
-                  }}
-                >
-                  {item.description}
-                </div>
-              )}
-              {item.link && (
-                <a
-                  href={item.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    fontSize: 13,
-                    color: C.pink,
-                    fontWeight: 500,
-                    fontFamily: FONT_SANS,
-                    textDecoration: "none",
-                    borderBottom: `1px solid ${C.pink}`,
-                    paddingBottom: 2,
-                  }}
-                >
-                  {item.linkText} →
-                </a>
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
     </>
   );
 }
