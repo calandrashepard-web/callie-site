@@ -3420,6 +3420,62 @@ const PATH_TO_PAGE = Object.fromEntries(
   Object.entries(PAGE_TO_PATH).map(([k, v]) => [v, k])
 );
 
+// Per-page title and description for search results and link previews
+const PAGE_META = {
+  home: {
+    title: "Callie Shepard | Demand & Inventory Planning Consultant",
+    description:
+      "Demand and inventory planning consultant for growing brands and retailers, and planner of all things in between. Based in Delray Beach, FL.",
+  },
+  work: {
+    title: "Work | Callie Shepard",
+    description:
+      "Fifteen years of demand and inventory planning across fashion, CPG, and wellness, including Bloomingdale's, Saks, Parks Project, and G.O.A.T. Foods.",
+  },
+  consulting: {
+    title: "Planning Consulting for Growing Brands | Callie Shepard",
+    description:
+      "Forecasting, reporting, and inventory systems that replace the guesswork for growing brands and retailers.",
+  },
+  "planning-lab": {
+    title: "The Planning Lab | Merchandise Planning Simulator",
+    description:
+      "Step into the role of Director of Planning and work a full seasonal cycle, from pre-season forecasting to end-of-season analysis.",
+  },
+  travel: {
+    title: "Travel | Callie Shepard",
+    description:
+      "Trips, itineraries, and the places worth going back to, from a planner who plans vacations the same way she plans everything else.",
+  },
+  fitness: {
+    title: "Fitness | Callie Shepard",
+    description:
+      "Strength training, HYROX, and the routine behind it, from a NASM-certified personal trainer based in Delray Beach, FL.",
+  },
+  style: {
+    title: "Style | Callie Shepard",
+    description:
+      "Fashion exhibits, design shows, and the craftsmanship behind the clothes, from someone who has spent fifteen years close to product.",
+  },
+  about: {
+    title: "About | Callie Shepard",
+    description:
+      "Demand planning executive, consultant, and founder of Callie Plans, LLC. Based in Delray Beach, FL.",
+  },
+};
+
+// Keep the tags in the page head in step with the page being viewed
+function setMetaTag(selector, attr, value, content) {
+  if (typeof document === "undefined") return;
+  let el = document.head.querySelector(selector);
+  if (!el) {
+    el = document.createElement("meta");
+    el.setAttribute(attr, value);
+    document.head.appendChild(el);
+  }
+  el.setAttribute("content", content);
+}
+
 function getPageFromPath() {
   if (typeof window === "undefined") return "home";
   return PATH_TO_PAGE[window.location.pathname] || "home";
@@ -3461,6 +3517,26 @@ export default function CallieShepardSite() {
   // Scroll to top on page change
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, [page]);
+
+  // Update the page title and meta tags whenever the page changes
+  useEffect(() => {
+    const meta = PAGE_META[page] || PAGE_META.home;
+    const url = "https://www.callieplans.com" + (PAGE_TO_PATH[page] || "/");
+    document.title = meta.title;
+    setMetaTag('meta[name="description"]', "name", "description", meta.description);
+    setMetaTag('meta[property="og:title"]', "property", "og:title", meta.title);
+    setMetaTag('meta[property="og:description"]', "property", "og:description", meta.description);
+    setMetaTag('meta[property="og:url"]', "property", "og:url", url);
+    setMetaTag('meta[name="twitter:title"]', "name", "twitter:title", meta.title);
+    setMetaTag('meta[name="twitter:description"]', "name", "twitter:description", meta.description);
+    let canonical = document.head.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.setAttribute("rel", "canonical");
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute("href", url);
   }, [page]);
 
   const renderPage = () => {
